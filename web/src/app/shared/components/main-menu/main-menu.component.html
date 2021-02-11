@@ -1,0 +1,26 @@
+<nav class="d-flex justify-content-between">
+
+  <div class="d-flex justify-content-start align-items-center">
+    <a *ngFor="let item of items" [routerLink]="[item.route]" mat-flat-button routerLinkActive="active-link">
+      {{item.title}}
+    </a>
+  </div>
+
+  <div class="d-flex justify-content-end align-items-center">
+    <button (click)="login()" *ngIf="!(isLogged$ | async), else logoutTemp" [@enterOpacity] color="primary" mat-button>
+      Iniciar Sesión
+      <mat-icon>login</mat-icon>
+    </button>
+
+    <ng-template #logoutTemp>
+
+      <span class="user-name" [@enterOpacity]>Hola, {{(userData$ | async)?.name}}</span>
+
+      <button (click)="logout()" [@enterOpacity] color="warn" mat-button>
+        Cerrar Sesión
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+
+    </ng-template>
+  </div>
+</nav>

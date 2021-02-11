@@ -1,0 +1,19 @@
+<article class="shadow">
+  <header>
+    <span class="year-tag rounded shadow-lg">{{data.Year}}</span>
+    <div class="favorite" *ngIf="isLogged" @enterOpacity>
+      <button type="button" mat-mini-fab (click)="setFavorite()">
+        <mat-icon [class.text-danger]="isFavorite">{{isFavorite ? 'favorite' : 'favorite_border'}}</mat-icon>
+      </button>
+    </div>
+  </header>
+  <div role="button" (click)="openDetails()">
+    <figure>
+      <img [src]="data.Poster !== 'N/A' ? data.Poster : '/assets/images/unknown.png' " [alt]="data.Title">
+    </figure>
+
+    <footer class="p-2">
+      <h3 class="m-0">{{data.Title | truncateText: 50}}</h3>
+    </footer>
+  </div>
+</article>

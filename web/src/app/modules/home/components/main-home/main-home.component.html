@@ -1,0 +1,25 @@
+<main>
+
+  <section class="filters p-2 overflow-hidden">
+    <mat-form-field appearance="outline" class="float-left col-md-6 col-sm-12">
+      <mat-icon matPrefix>search</mat-icon>
+      <input [formControl]="searchByTextControl" matInput placeholder="Buscar película" id="movie-search" type="search">
+    </mat-form-field>
+
+    <div class="float-left col-md-3 col-sm-12">
+      <app-datepicker-year (yearSelected)="chosenYear($event)" [maxYear]="maxYear"
+                           [initYear]="initYear"></app-datepicker-year>
+    </div>
+  </section>
+
+
+  <section class="p-2 clearfix d-flex flex-wrap justify-content-center items-list">
+    <ng-container *ngFor="let item of itemsStorage; trackBy: trackByFn">
+      <div class="float-left" @enterMove>
+        <app-item-container [data]="item"></app-item-container>
+      </div>
+    </ng-container>
+
+  </section>
+
+</main>

@@ -1,0 +1,16 @@
+.items-list {
+  & > div {
+    flex: 0 300px;
+    padding: 1vW;
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .items-list {
+    & > div {
+      flex: 0 50%;
+    }
+  }
+}

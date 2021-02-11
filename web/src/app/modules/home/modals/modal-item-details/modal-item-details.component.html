@@ -1,0 +1,9 @@
+<h2 class="text-secondary" mat-dialog-title>{{itemData?.Title}}</h2>
+
+<mat-dialog-content>
+  <ng-container *ngFor="let data of info">
+    <span class="font-weight-bold">{{data[0]}}</span>:
+    <span>{{data[1]}}</span>
+    <br>
+  </ng-container>
+</mat-dialog-content>

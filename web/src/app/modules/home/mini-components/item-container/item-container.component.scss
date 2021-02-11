@@ -1,0 +1,64 @@
+:host {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+$distHeader: 0.4em;
+
+.year-tag {
+  position: absolute;
+  right: $distHeader;
+  top: $distHeader;
+  background: white;
+  padding: 0.3em;;
+}
+
+.favorite {
+  position: absolute;
+  left: $distHeader;
+  top: $distHeader;
+  z-index: 99;
+
+  button {
+    background: #ffffffc7;
+  }
+
+  mat-icon {
+    color: gray;
+  }
+
+}
+
+figure {
+  height: 420px;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.2s all;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+  }
+}
+
+footer {
+  height: 80px;
+  border-bottom: 1px solid gray;
+}
+
+@media (max-width: 400px) {
+
+  figure {
+    height: 300px;
+  }
+
+  footer {
+    height: 100px;
+  }
+}
+
